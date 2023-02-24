@@ -2854,9 +2854,9 @@
   "version" "1.1.1"
 
 "electron-to-chromium@^1.4.284":
-  "integrity" "sha512-qyTx2aDFjEni4UnRWEME9ubd2Xc9c0zerTUl/ZinvD4QPsF0S7kJTV/Es/lPCTkNX6smyYar+z/n8Cl6pFr8yQ=="
-  "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.308.tgz"
-  "version" "1.4.308"
+  "integrity" "sha512-/xlATgfwkm5uDDwLw5nt/MNEf7c1oazLURMZLy39vOioGYyYzLWIDT8fZMJak6qTiAJ7udFTy7JG7ziyjNutiA=="
+  "resolved" "https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.4.310.tgz"
+  "version" "1.4.310"
 
 "emittery@^0.13.1":
   "integrity" "sha512-DeWwawk6r5yR9jFgnDKYt4sLS0LmHJJi3ZOnb5/JdbYwj3nW+FxQnHIjhBKz8YLC7oRNPVM9NQ47I3CVx34eqQ=="
@@ -3440,9 +3440,9 @@
   "version" "0.185.2"
 
 "flow-parser@0.*":
-  "integrity" "sha512-01eYYVlCEO2p6JexhTbMbDNPeDKQZV++SJbaHE/HzypTkV83oJmsJQVjVCGD8FYWiQ3ha9ALD/AHwsFhPwnZJA=="
-  "resolved" "https://registry.npmjs.org/flow-parser/-/flow-parser-0.200.0.tgz"
-  "version" "0.200.0"
+  "integrity" "sha512-N6gxgo0iQx0G2m3aJjg3RLxNLUG3EBYgBN/xDDPGQXSjvqNkTdEd2t1myE36Xi7GndZQWngDP7jf0GvxdL6pRg=="
+  "resolved" "https://registry.npmjs.org/flow-parser/-/flow-parser-0.200.1.tgz"
+  "version" "0.200.1"
 
 "for-each@^0.3.3":
   "integrity" "sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw=="
@@ -5899,9 +5899,8 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.15.tgz"
   "version" "0.71.15"
 
-"react-native-twilio-video-webrtc@^3.1.0":
-  "integrity" "sha512-NTJmzqjDLG2vQYyKezM708UNrDW9V27Q8Du4kKIGv7rLYDshbhHsih1w9uJ9i5ChxWdext3SFUt4eSjYNhBlFg=="
-  "resolved" "https://registry.npmjs.org/react-native-twilio-video-webrtc/-/react-native-twilio-video-webrtc-3.1.0.tgz"
+"react-native-twilio-video-webrtc@github:blackuy/react-native-twilio-video-webrtc":
+  "resolved" "git+ssh://git@github.com/blackuy/react-native-twilio-video-webrtc.git#68bd1e3e4d2e16fbe4a4b1e979736b1d3a4823c6"
   "version" "3.1.0"
   dependencies:
     "prop-types" "^15.5.10"

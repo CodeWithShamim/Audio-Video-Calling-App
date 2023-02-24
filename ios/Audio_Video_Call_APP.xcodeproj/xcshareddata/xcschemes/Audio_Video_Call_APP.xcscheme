@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "Audio_Video_Calling_App.app"
-               BlueprintName = "Audio_Video_Calling_App"
-               ReferencedContainer = "container:Audio_Video_Calling_App.xcodeproj">
+               BuildableName = "Audio_Video_Call_APP.app"
+               BlueprintName = "Audio_Video_Call_APP"
+               ReferencedContainer = "container:Audio_Video_Call_APP.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "Audio_Video_Calling_AppTests.xctest"
-               BlueprintName = "Audio_Video_Calling_AppTests"
-               ReferencedContainer = "container:Audio_Video_Calling_App.xcodeproj">
+               BuildableName = "Audio_Video_Call_APPTests.xctest"
+               BlueprintName = "Audio_Video_Call_APPTests"
+               ReferencedContainer = "container:Audio_Video_Call_APP.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Audio_Video_Calling_App.app"
-            BlueprintName = "Audio_Video_Calling_App"
-            ReferencedContainer = "container:Audio_Video_Calling_App.xcodeproj">
+            BuildableName = "Audio_Video_Call_APP.app"
+            BlueprintName = "Audio_Video_Call_APP"
+            ReferencedContainer = "container:Audio_Video_Call_APP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "Audio_Video_Calling_App.app"
-            BlueprintName = "Audio_Video_Calling_App"
-            ReferencedContainer = "container:Audio_Video_Calling_App.xcodeproj">
+            BuildableName = "Audio_Video_Call_APP.app"
+            BlueprintName = "Audio_Video_Call_APP"
+            ReferencedContainer = "container:Audio_Video_Call_APP.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
