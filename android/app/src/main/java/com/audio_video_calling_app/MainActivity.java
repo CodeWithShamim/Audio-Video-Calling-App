@@ -1,4 +1,4 @@
-package com.audio_video_call_app;
+package com.audio_video_calling_app;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "Audio_Video_Call_APP";
+    return "Audio_Video_Calling_APP";
   }
 
   /**

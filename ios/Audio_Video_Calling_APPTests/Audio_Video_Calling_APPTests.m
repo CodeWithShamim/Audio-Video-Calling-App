@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface Audio_Video_Call_APPTests : XCTestCase
+@interface Audio_Video_Calling_APPTests : XCTestCase
 
 @end
 
-@implementation Audio_Video_Call_APPTests
+@implementation Audio_Video_Calling_APPTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

@@ -98,9 +98,9 @@ android {
         targetCompatibility 1.8
     }
 
-    namespace "com.audio_video_call_app"
+    namespace "com.audio_video_calling_app"
     defaultConfig {
-        applicationId "com.audio_video_call_app"
+        applicationId "com.audio_video_calling_app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,5 +1,5 @@
 {
-  "name": "Audio_Video_Call_APP",
+  "name": "Audio_Video_Calling_APP",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "18.2.0",
     "react-native": "0.71.3",
-    "react-native-twilio-video-webrtc": "github:blackuy/react-native-twilio-video-webrtc"
+    "react-native-twilio-video-webrtc": "^3.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
