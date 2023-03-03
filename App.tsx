@@ -1,4 +1,4 @@
-import React, {Component, useRef, useState} from 'react';
+import React, {Component, useEffect, useRef, useState} from 'react';
 import {
   View,
   StyleSheet,
@@ -12,6 +12,7 @@ import {
   TwilioVideoParticipantView,
   TwilioVideo,
 } from 'react-native-twilio-video-webrtc';
+import _checkPermissions from './src/utils/Permissions';
 
 const App = () => {
   const [isAudioEnabled, setIsAudioEnabled] = useState(true);
@@ -21,6 +22,15 @@ const App = () => {
   const [videoTracks, setVideoTracks] = useState(new Map());
   const [token, setToken] = useState('');
   const twilioRef = useRef<any>(null);
+
+  useEffect(() => {
+    _checkPermissions();
+
+    fetch('http://10.0.2.2:5000/api/v1/video/generateToken?username=shamim')
+      .then(res => res.json())
+      .then(data => data && setToken(data))
+      .catch(e => console.log(e));
+  }, []);
 
   const _onConnectButtonPress = () => {
     twilioRef.current.connect({accessToken: token});
@@ -104,7 +114,7 @@ const App = () => {
     <View style={styles.container}>
       {status === 'disconnected' && (
         <View>
-          <Text style={styles.welcome}>React Native Twilio Video</Text>
+          <Text style={styles.welcome}>Welcome</Text>
           <TextInput
             style={styles.input}
             autoCapitalize="none"
@@ -136,19 +146,19 @@ const App = () => {
             <TouchableOpacity
               style={styles.optionButton}
               onPress={_onEndButtonPress}>
-              <Text style={{fontSize: 12}}>End</Text>
+              <Text style={styles.optionButtonText}>End</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.optionButton}
               onPress={_onMuteButtonPress}>
-              <Text style={{fontSize: 12}}>
+              <Text style={styles.optionButtonText}>
                 {isAudioEnabled ? 'Mute' : 'Unmute'}
               </Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={styles.optionButton}
               onPress={_onFlipButtonPress}>
-              <Text style={{fontSize: 12}}>Flip</Text>
+              <Text style={styles.optionButtonText}>Camera Flip</Text>
             </TouchableOpacity>
             <TwilioVideoLocalView enabled={true} style={styles.localVideo} />
           </View>
@@ -172,62 +182,62 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "white"
+    backgroundColor: 'white',
   },
   callContainer: {
     flex: 1,
-    position: "absolute",
+    position: 'absolute',
     bottom: 0,
     top: 0,
     left: 0,
-    right: 0
+    right: 0,
   },
   welcome: {
     fontSize: 30,
-    textAlign: "center",
-    paddingTop: 40
+    textAlign: 'center',
+    paddingTop: 40,
   },
   input: {
-    height: 50,
+    height: 40,
+    width: '95%',
     borderWidth: 1,
-    marginRight: 70,
-    marginLeft: 70,
-    marginTop: 50,
-    textAlign: "center",
-    backgroundColor: "white"
+    marginVertical: 20,
+    borderRadius: 6,
+    alignSelf: 'center',
+    backgroundColor: 'white',
   },
   button: {
-    marginTop: 100
+    marginTop: 100,
   },
   localVideo: {
     flex: 1,
     width: 125,
     height: 200,
-    position: "absolute",
+    position: 'absolute',
     right: 10,
     bottom: 400,
     borderRadius: 2,
-    borderColor: '#4e4e4e'
+    borderColor: '#4e4e4e',
   },
   remoteGrid: {
     flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap"
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
   remoteVideo: {
     width: '100%',
-    height: '100%'
+    height: '100%',
   },
   optionsContainer: {
-    position: "absolute",
+    position: 'absolute',
     left: 0,
     bottom: 0,
     right: 0,
     height: 100,
     // backgroundColor: "blue",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: 'center'
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   optionButton: {
     width: 60,
@@ -235,9 +245,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     borderRadius: 100 / 2,
-    backgroundColor: "grey",
-    justifyContent: "center",
-    alignItems: "center"
-  }
+    backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  optionButtonText: {
+    fontSize: 12,
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
 });
-
