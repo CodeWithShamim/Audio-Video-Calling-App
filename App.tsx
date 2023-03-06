@@ -6,6 +6,7 @@ import {
   TextInput,
   Button,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 import {
   TwilioVideoLocalView,
@@ -26,14 +27,24 @@ const App = () => {
   useEffect(() => {
     _checkPermissions();
 
-    fetch('http://10.0.2.2:5000/api/v1/video/generateToken?username=shamim')
+    const username = 'shamim' + Math.floor(Math.random() * 100);
+    console.log(username);
+
+    fetch(
+      `https://audio-video-calling-app-backend.vercel.app/api/v1/video/generateToken?username=${username}`,
+    )
       .then(res => res.json())
       .then(data => data && setToken(data))
       .catch(e => console.log(e));
   }, []);
 
+  if (!token) return <ActivityIndicator />;
+
   const _onConnectButtonPress = () => {
-    twilioRef.current.connect({accessToken: token});
+    twilioRef.current.connect({
+      roomName: 'college',
+      accessToken: token,
+    });
     setStatus('connecting');
   };
 
@@ -67,7 +78,7 @@ const App = () => {
     setStatus('disconnected');
   };
 
-  const _onRoomDidFailToConnect = (error: string) => {
+  const _onRoomDidFailToConnect = (error: object) => {
     console.log('[FailToConnect]ERROR: ', error);
 
     setStatus('disconnected');
@@ -169,7 +180,7 @@ const App = () => {
         ref={twilioRef}
         onRoomDidConnect={_onRoomDidConnect}
         onRoomDidDisconnect={_onRoomDidDisconnect}
-        // onRoomDidFailToConnect={_onRoomDidFailToConnect}
+        onRoomDidFailToConnect={_onRoomDidFailToConnect}
         onParticipantAddedVideoTrack={_onParticipantAddedVideoTrack}
         onParticipantRemovedVideoTrack={_onParticipantRemovedVideoTrack}
       />
